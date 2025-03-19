@@ -1,5 +1,5 @@
-# python/extractor.py
-import pandas as pd
+""" extractor module to extract data from a source. """
+import polars as pl
 from kaggle_api_handler import KaggleAPIHandler
 
 def extract_data():
@@ -16,5 +16,5 @@ def extract_data():
     # Call the download_dataset method
     kaggle_handler.download_dataset(dataset_name, save_dir)
 
-    data = pd.read_csv('./Dev/datasets/gsearch_jobs.csv', sep="\t",)
+    data = pl.read_csv('./Dev/datasets/gsearch_jobs.csv', sep="\t",)
     return data

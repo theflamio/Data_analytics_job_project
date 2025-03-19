@@ -1,4 +1,5 @@
-# python/transformer.py
+""" transformer module to transform the extracted data. """
+import polars as pl
 
 def transform_data(data):
     """
