@@ -1,0 +1,17 @@
+# step 1: Create based image
+FROM python:3.14.0a5-bookworm
+
+# step 2: Set working directory
+WORKDIR /app
+
+# step 3: Copy the current directory contents into the container at /app
+COPY main.py requirements.txt /app/
+
+# Step 4: Install any needed packages specified in requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Step 5: Make port 5000 available for the app to run
+# EXPOSE 5000
+
+# Step 6: Run HelloWorld.py when the container launches
+CMD ["python", "__main__.py"]
